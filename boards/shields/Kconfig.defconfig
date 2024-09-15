@@ -1,0 +1,6 @@
+if SHIELD_MEN
+
+config ZMK_KEYBOARD_NAME
+    default "Men"
+
+endif
