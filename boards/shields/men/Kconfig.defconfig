@@ -1,4 +1,4 @@
-if SHIELD_MEN
+if SHIELD_men
 
 config ZMK_KEYBOARD_NAME
     default "men"

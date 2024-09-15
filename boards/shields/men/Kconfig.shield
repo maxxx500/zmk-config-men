@@ -1,2 +1,2 @@
-config SHIELD_MEN
+config SHIELD_men
     def_bool $(shields_list_contains,men)
