@@ -7,7 +7,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
 / {
     keymap {
         compatible = "zmk,keymap";
@@ -15,29 +17,29 @@
         default_layer {
 
             bindings = <
-	&none      &none        &none        &none  &none
-	&mo 3  &kp RIGHT  &none &kp C_VOL_DN  &none
-	&mo 2  &kp DOWN &kp UP   &kp C_VOL_UP &none
-    &tog 1 &kp LEFT   &kp C_PP &kp C_NEXT &kp C_PREV
+	&to 2      &none        &none        &none  &none
+	&none  &kp RIGHT  &none &kp C_VOL_DN  &none
+	&none  &kp DOWN &kp UP   &kp C_VOL_UP &none
+    &to 1 &kp LEFT   &kp C_PP &kp C_NEXT &kp C_PREV
             >;
 
         };
 
         num_layer {
             bindings = <
-	&kp INS  &kp KP_MINUS &kp KP_MULTIPLY &kp KP_DIVIDE &kp KP_PLUS
-	&lt 3 N0 &kp N3 &kp N6 &kp N9 &kp F7
-	&trans   &kp N2 &kp N5 &kp N8 &kp END
-    &trans   &kp N1 &kp N4 &kp N7 &kp KP_NUM
+	&kp ENTER &kp KP_MINUS &kp KP_MULTIPLY &kp KP_DIVIDE &kp KP_PLUS
+	&lt 3     &kp N3 &kp N6 &kp N9 &kp F7
+	&kp N0    &kp N2 &kp N5 &kp N8 &kp END
+    &to 2    &kp N1 &kp N4 &kp N7 &kp KP_NUM
             >;
         };
 
         lower_layer {
             bindings = <
-    &none      &bt BT_CLR        &none        &none  &none
-	&none &none        &kp K_COPY    &sys_reset  &bootloader     
-    &trans     &bt BT_SEL 3 &bt BT_SEL 4 &none &none
-    &none      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none
+    &to 1     &bt BT_CLR   &none        &none      &none
+	&to 0 	   &bt BT_SEL 3 &kp K_COPY   &sys_reset &bootloader     
+    &trans     &bt BT_SEL 2 &bt K_PASTE  &none      &none
+    &none      &bt BT_SEL 1 &bt BT_SEL 4 &bt BT_SEL 2 &none
             >;
         };
 
